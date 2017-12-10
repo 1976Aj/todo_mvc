@@ -1,19 +1,26 @@
-<h2>Sign up</h2>
+<div class="well well-lg wellsStyle">
+<div class="form-group">
+  <h2>Sign up</h2>
+
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <%= f.email_field :email, autofocus: true, class: 'form-control', :placeholder => 'Email address' %>
-
+  <%# Email Field %>
+  <%= f.email_field :email, autofocus: true, class: 'form-control  minCar', :placeholder => 'Email address' %>
+  <%# Password Field %>
   <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %>
-        <%= f.password_field :password, autocomplete: "off", class: "form-control", :placeholder => 'Password' %>
+  <em>(Password has to be <%= @minimum_password_length %> characters minimum)</em>
+  <% end %>
+  <%= f.password_field :password, autocomplete: "off", class: "form-control minCar", :placeholder => 'Password' %>
+  <%# Password Confirmation Field %>
+  <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control confField", :placeholder => 'Password confirmation' %>
 
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control confField", :placeholder => 'Password confirmation' %>
-
-  <%= f.submit "Sign up", class: 'btn btn-default' %>
+  <%# Submit Button %>
+  <%= f.submit "Sign up", class: 'btn btn-default bSub' %>
 
   <% end %>
+  <%= render "devise/shared/links" %>
 
-<%= render "devise/shared/links" %>
+  </div>
+</div>
