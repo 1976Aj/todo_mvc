@@ -1,7 +1,10 @@
-<h1>Our TODO list homepage</h1>
+
 <% if user_signed_in? %>
-<p>We should probably start adding our todolist functnionality... hold plz!</p>
+<h1 class="cover-heading">Nice having you here!</h1>
+<p class="lead">Let's get cracking on our ToDoS.</p>
+<%= link_to 'Create New Tasks!', new_list_path, class: "btn btn-lg btn-default" %>
 <% else %>
 <%# NO ONE IS SIGNED IN %>
-<p>Come build todolist with us, <%= link_to 'Sign up now!', new_user_registration_path %></p>
+<h1 class="cover-heading">Welcome New User!</h1>
+<p>We can't wait to get started, we look forward to help you keep your life on track. </p><%= link_to 'Sign up now!', new_user_registration_path, class: "btn btn-lg btn-default" %>
 <% end %>

@@ -8,15 +8,40 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <p id="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <% if user_signed_in? %>
-      <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'btn btn-warning' %>
-    <% else %>
-      <%= link_to 'Log In', new_user_session_path %>
-    <% end %>
+<body>
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
 
-    <%= yield %>
+
+
+        <div class="masthead clearfix">
+          <div class="inner">
+              <h3 class="masthead-brand"><%= link_to 'Amazing ToDoS', root_path %></h3>
+              <nav>
+              <ul class="nav masthead-nav">
+              <li><%= link_to 'Home', root_path %></li>
+              <li><%= link_to 'New List', new_list_path %></li>
+              <li><%= link_to 'My Lists', lists_path %></li>
+              <li><% if user_signed_in? %>
+              <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+              <% else %>
+              <%= link_to 'Log In', new_user_session_path %>
+              <% end %></li>
+              </ul>
+              </nav>
+          </div>
+        </div>
+
+        <div class="inner cover">
+          <%= yield %>
+        <p id="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+    </div>
+    </div>
+  </div>
+</div>
+
   </body>
 </html>
