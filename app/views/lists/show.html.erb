@@ -1,16 +1,13 @@
-<div class="well well-lg wellsStyle">
-<div class="form-group">
-<h1>
-  List Name:</h1>
 
-<h2><%= @list.name %></h2>
+<div class="form-group">
+<h2>
+  List Name: <%= @list.name %>
+</h2>
 
   <%= form_with model: [@list, @item], local: true do |form| %>
     <%= form.hidden_field :completed, value: false %>
-    <%= form.text_field :description, class:"form-control", placeholder: "Update your list here." %>
+    <%= form.text_field :description, class:"form-control center-block updateList", placeholder: "Add New Task" %>
   <% end %>
-
-
 
 <ul class="showList">
   <% @list.items.each do |item| %>
@@ -22,9 +19,7 @@
   <% end %>
 </ul>
 
-
 <%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>
 
-</div>
 </div>

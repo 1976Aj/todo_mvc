@@ -33,7 +33,13 @@ html,
 body {
   height: 100%;
   background-color: #333;
+  font: {
+    font: {
+      size: 100%;
+    }
+  }
 }
+
 body {
   color: #fff;
   text-align: center;
@@ -68,8 +74,10 @@ body {
  * Header
  */
 .masthead-brand {
-  margin-top: 8px;
+  margin-top: 1%;
   //margin-bottom: 10px;
+
+  text-transform: uppercase;
    a {
     padding-right: 0;
     padding-left: 0;
@@ -190,6 +198,7 @@ body {
 .btn-default {
   background-color: darken($accent-color, 2%);
   color: white;
+  text-transform: uppercase;
 }
 
 .btn-default:hover {
@@ -266,12 +275,60 @@ input {
 .showList {
   margin-top: 15px;
   margin-left: -8%;
-  color: $text-color;
+  text-align: left;
+  color: #FFF;
+  font: {
+    size: 1.5em;
+  }
 
   ul, li {
   list-style-type: none;
+  margin-bottom: 2%;
 }
   a {
-    color: $text-color;
+    color: #FFF;
   }
+}
+
+// .updateList {
+//   width: 60%;
+// }
+
+.fa {
+  color: $accent-color;
+  padding: 0 1% 0 1%;
+  margin-left: 2%;
+}
+
+
+.editPage  {
+  margin-top: 30%;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: #EC9B35;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid #EC9B35;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  color: $text-color;
+  text-align: left;
+  ul, li {
+    list-style-type: none;
+  }
+  background: {
+    color: #f0f0f0;
+  }
+
+  h2 {
+    font: {
+      size: 1em;
+    }
+  }
+
 }

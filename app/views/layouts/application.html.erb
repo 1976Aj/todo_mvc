@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+  <!-- fontawesome -->
     <script src="https://use.fontawesome.com/0b3217b463.js"></script>
   </head>
 
@@ -15,33 +16,39 @@
 <div class="site-wrapper">
   <div class="site-wrapper-inner">
     <div class="cover-container">
-
-
-
-        <div class="masthead clearfix">
+<!-- Navbar -->
+  <div class="masthead clearfix">
           <div class="inner">
               <h3 class="masthead-brand"><%= link_to 'Amazing ToDoS', root_path %></h3>
               <nav>
+          <!-- Not LoggedIn Navbar -->
+
+          <!-- LoggedIn Navbar -->
               <ul class="nav masthead-nav">
-              <li><%= link_to 'Home', root_path %></li>
-              <li><%= link_to 'New List', new_list_path %></li>
-              <li><%= link_to 'My Lists', lists_path %></li>
-              <li><% if user_signed_in? %>
-              <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+                <%= render 'nav_link', text: 'Home', path: root_path %>
+                <%= render 'nav_link', text: 'New List', path: new_list_path %>
+                <%= render 'nav_link', text: 'My List', path: lists_path %>
+              <% if user_signed_in? %>
+              <!-- The commented code shows the logged in user -->
+                <!-- <li><%= link_to 'Signed in as ' + current_user.email, edit_user_registration_path %></li> -->
+              <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
               <% else %>
-              <%= link_to 'Log In', new_user_session_path %>
-              <% end %></li>
+              <li><%= link_to 'Log In', new_user_session_path %></li>
+              <% end %>
               </ul>
               </nav>
           </div>
         </div>
+  <!-- Navbar/End -->
 
+  <!-- Page Main View -->
         <div class="inner cover">
           <%= yield %>
         <p id="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
+      </div>
+  <!-- Page Main View/End -->
 
-    </div>
     </div>
   </div>
 </div>

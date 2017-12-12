@@ -2,9 +2,9 @@
 <% if user_signed_in? %>
 <h1 class="cover-heading">Nice having you here!</h1>
 <p class="lead">Let's get cracking on our ToDoS.</p>
-<%= link_to 'Create New Tasks!', new_list_path, class: "btn btn-lg btn-default" %>
+<%= link_to 'Create New List', new_list_path, class: "btn btn-default" %>
 <% else %>
 <%# NO ONE IS SIGNED IN %>
 <h1 class="cover-heading">Welcome New User!</h1>
-<p>We can't wait to get started, we look forward to help you keep your life on track. </p><%= link_to 'Sign up now!', new_user_registration_path, class: "btn btn-lg btn-default" %>
+<p>We can't wait to get started, we look forward to help you keep your life on track. </p><%= link_to 'Sign up now', new_user_registration_path, class: "btn btn-default" %>
 <% end %>
